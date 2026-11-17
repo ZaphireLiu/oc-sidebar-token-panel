@@ -5,11 +5,13 @@ session **and every sub-agent session below it**:
 
 ```text
 Tokens
-Hit     128.6k
-Miss     21.2k
-Out       1.9k
+Hit Rate  95.72%
+Hit       128.6k
+Miss       21.2k
+Out         1.9k
 ```
 
+- `Hit Rate` — cache-hit share of all input side tokens: `hit / (hit + miss)`, two decimals
 - `Hit` — cache-hit prompt tokens (`tokens.cache.read`)
 - `Miss` — uncached input tokens (`tokens.input + tokens.cache.write`)
 - `Out` — generated tokens (`tokens.output + tokens.reasoning`)

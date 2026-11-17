@@ -6,6 +6,7 @@ import { createMemo } from "solid-js"
 //   hit  = cache.read                       (prompt cache hits)
 //   miss = input + cache.write              (fresh input, including cache writes)
 //   out  = output + reasoning               (reasoning is billed as output)
+//   hit rate = hit / (hit + miss)
 function compact(value: number): string {
   if (value < 1000) return String(value)
   if (value < 1_000_000) return `${oneDecimal(value / 1000)}k`
@@ -29,7 +30,8 @@ function Usage(props: { sessionID: string }) {
       miss += tokens.input + tokens.cache.write
       out += tokens.output + tokens.reasoning
     }
-    return { hit, miss, out }
+    const total = hit + miss
+    return { hit, miss, out, hitRate: total > 0 ? (hit / total) * 100 : 0 }
   })
   const theme = () => context.theme
   return (
@@ -38,22 +40,28 @@ function Usage(props: { sessionID: string }) {
         <b>Tokens</b>
       </text>
       <box flexDirection="row">
-        <box width={6}>
+        <box width={9}>
+          <text fg={theme().text.muted}>Hit Rate</text>
+        </box>
+        <text fg={theme().text.muted}>{stats().hitRate.toFixed(2)}%</text>
+      </box>
+      <box flexDirection="row">
+        <box width={9}>
           <text fg={theme().text.muted}>Hit</text>
         </box>
-        <text fg={theme().text.base}>{compact(stats().hit)}</text>
+        <text fg={theme().text.muted}>{compact(stats().hit)}</text>
       </box>
       <box flexDirection="row">
-        <box width={6}>
+        <box width={9}>
           <text fg={theme().text.muted}>Miss</text>
         </box>
-        <text fg={theme().text.base}>{compact(stats().miss)}</text>
+        <text fg={theme().text.muted}>{compact(stats().miss)}</text>
       </box>
       <box flexDirection="row">
-        <box width={6}>
+        <box width={9}>
           <text fg={theme().text.muted}>Out</text>
         </box>
-        <text fg={theme().text.base}>{compact(stats().out)}</text>
+        <text fg={theme().text.muted}>{compact(stats().out)}</text>
       </box>
     </box>
   )
