@@ -1,9 +1,26 @@
 {
-  "name": "opencode-token-panel",
+  "name": "oc-sidebar-token-panel",
   "version": "0.1.0",
-  "private": true,
-  "description": "Minimal OpenCode TUI sidebar panel: cache-hit tokens, uncached input tokens, and output tokens for the current session tree",
+  "description": "Minimal OpenCode TUI sidebar panel: cache hit rate, cache-hit tokens, uncached input tokens and output tokens for the current session tree",
   "type": "module",
+  "license": "MIT",
+  "author": "ZaphireLiu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaphireLiu/oc-sidebar-token-panel.git"
+  },
+  "homepage": "https://github.com/ZaphireLiu/oc-sidebar-token-panel",
+  "bugs": "https://github.com/ZaphireLiu/oc-sidebar-token-panel/issues",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-tui",
+    "tui",
+    "sidebar",
+    "tokens",
+    "cache-hit",
+    "usage"
+  ],
   "exports": {
     ".": "./index.ts",
     "./tui": "./tui.tsx"

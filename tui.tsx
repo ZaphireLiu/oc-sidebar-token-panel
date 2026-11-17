@@ -63,7 +63,7 @@ function Usage(props: { sessionID: string }) {
 }
 
 export default Plugin.define({
-  id: "local.token-panel.tui",
+  id: "oc-sidebar-token-panel.tui",
   setup(context) {
     context.ui.slot({
       prepend: "sidebar.content",
