@@ -63,7 +63,7 @@ export default Plugin.define({
   id: "local.token-panel.tui",
   setup(context) {
     context.ui.slot({
-      append: "sidebar.content",
+      prepend: "sidebar.content",
       render: ({ sessionID }) => <Usage sessionID={sessionID} />,
     })
   },
