@@ -1,0 +1,11 @@
+{
+  "name": "opencode-token-panel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal OpenCode TUI sidebar panel: cache-hit tokens, uncached input tokens, and output tokens for the current session tree",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./tui": "./tui.tsx"
+  }
+}
