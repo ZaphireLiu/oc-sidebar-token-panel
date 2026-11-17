@@ -5,11 +5,14 @@ session **and every sub-agent session below it**:
 
 ```text
 Tokens
-Hit Rate  95.72%
-Hit       128.6k
-Miss       21.2k
-Out         1.9k
+Hit Rate          95.71%
+Hit                17.9M
+Miss              803.3k
+Out               313.2k
 ```
+
+Values are right-aligned in a fixed data column, leaving a margin before the
+sidebar's right edge.
 
 - `Hit Rate` — cache-hit share of all input side tokens: `hit / (hit + miss)`, two decimals
 - `Hit` — cache-hit prompt tokens (`tokens.cache.read`)

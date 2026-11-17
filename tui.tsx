@@ -17,6 +17,20 @@ function oneDecimal(value: number): string {
   return value.toFixed(1).replace(/\.0$/, "")
 }
 
+// Right-align values inside a fixed-width data area so they end well before the
+// sidebar edge, leaving a margin on the right.
+const DATA_WIDTH = 29
+
+function Row(props: { label: string; value: string }) {
+  const context = usePlugin()
+  return (
+    <box flexDirection="row" width={DATA_WIDTH} justifyContent="space-between">
+      <text fg={context.theme.text.muted}>{props.label}</text>
+      <text fg={context.theme.text.muted}>{props.value}</text>
+    </box>
+  )
+}
+
 function Usage(props: { sessionID: string }) {
   const context = usePlugin()
   const stats = createMemo(() => {
@@ -33,36 +47,15 @@ function Usage(props: { sessionID: string }) {
     const total = hit + miss
     return { hit, miss, out, hitRate: total > 0 ? (hit / total) * 100 : 0 }
   })
-  const theme = () => context.theme
   return (
     <box flexDirection="column">
-      <text fg={theme().text.base}>
+      <text fg={context.theme.text.base}>
         <b>Tokens</b>
       </text>
-      <box flexDirection="row">
-        <box width={9}>
-          <text fg={theme().text.muted}>Hit Rate</text>
-        </box>
-        <text fg={theme().text.muted}>{stats().hitRate.toFixed(2)}%</text>
-      </box>
-      <box flexDirection="row">
-        <box width={9}>
-          <text fg={theme().text.muted}>Hit</text>
-        </box>
-        <text fg={theme().text.muted}>{compact(stats().hit)}</text>
-      </box>
-      <box flexDirection="row">
-        <box width={9}>
-          <text fg={theme().text.muted}>Miss</text>
-        </box>
-        <text fg={theme().text.muted}>{compact(stats().miss)}</text>
-      </box>
-      <box flexDirection="row">
-        <box width={9}>
-          <text fg={theme().text.muted}>Out</text>
-        </box>
-        <text fg={theme().text.muted}>{compact(stats().out)}</text>
-      </box>
+      <Row label="Hit Rate" value={`${stats().hitRate.toFixed(2)}%`} />
+      <Row label="Hit" value={compact(stats().hit)} />
+      <Row label="Miss" value={compact(stats().miss)} />
+      <Row label="Out" value={compact(stats().out)} />
     </box>
   )
 }
