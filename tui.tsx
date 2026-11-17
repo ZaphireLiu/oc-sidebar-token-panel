@@ -38,20 +38,20 @@ function Usage(props: { sessionID: string }) {
         <b>Tokens</b>
       </text>
       <box flexDirection="row">
-        <box width={8}>
-          <text fg={theme().text.muted}>命中</text>
+        <box width={6}>
+          <text fg={theme().text.muted}>Hit</text>
         </box>
         <text fg={theme().text.base}>{compact(stats().hit)}</text>
       </box>
       <box flexDirection="row">
-        <box width={8}>
-          <text fg={theme().text.muted}>未命中</text>
+        <box width={6}>
+          <text fg={theme().text.muted}>Miss</text>
         </box>
         <text fg={theme().text.base}>{compact(stats().miss)}</text>
       </box>
       <box flexDirection="row">
-        <box width={8}>
-          <text fg={theme().text.muted}>输出</text>
+        <box width={6}>
+          <text fg={theme().text.muted}>Out</text>
         </box>
         <text fg={theme().text.base}>{compact(stats().out)}</text>
       </box>

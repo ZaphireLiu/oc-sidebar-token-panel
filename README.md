@@ -5,14 +5,14 @@ session **and every sub-agent session below it**:
 
 ```text
 Tokens
-命中    128.6k
-未命中   21.2k
-输出      1.9k
+Hit     128.6k
+Miss     21.2k
+Out       1.9k
 ```
 
-- `命中` — cache-hit prompt tokens (`tokens.cache.read`)
-- `未命中` — uncached input tokens (`tokens.input + tokens.cache.write`)
-- `输出` — generated tokens (`tokens.output + tokens.reasoning`)
+- `Hit` — cache-hit prompt tokens (`tokens.cache.read`)
+- `Miss` — uncached input tokens (`tokens.input + tokens.cache.write`)
+- `Out` — generated tokens (`tokens.output + tokens.reasoning`)
 
 Numbers are abbreviated with `k` / `M`. Data comes from the sessions' cumulative
 token counters, summed over `data.session.family(sessionID)` (the session itself
