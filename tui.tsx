@@ -19,7 +19,7 @@ function oneDecimal(value: number): string {
 
 // Right-align values inside a fixed-width data area so they end well before the
 // sidebar edge, leaving a margin on the right.
-const DATA_WIDTH = 29
+const DATA_WIDTH = 16
 
 function Row(props: { label: string; value: string }) {
   const context = usePlugin()
@@ -49,10 +49,12 @@ function Usage(props: { sessionID: string }) {
   })
   return (
     <box flexDirection="column">
-      <text fg={context.theme.text.base}>
-        <b>Tokens</b>
-      </text>
-      <Row label="Hit Rate" value={`${stats().hitRate.toFixed(2)}%`} />
+      <box flexDirection="row" width={DATA_WIDTH} justifyContent="space-between">
+        <text fg={context.theme.text.base}>
+          <b>Tokens</b>
+        </text>
+        <text fg={context.theme.text.muted}>{stats().hitRate.toFixed(2)}%</text>
+      </box>
       <Row label="Hit" value={compact(stats().hit)} />
       <Row label="Miss" value={compact(stats().miss)} />
       <Row label="Out" value={compact(stats().out)} />
