@@ -46,7 +46,7 @@ This installs the package into OpenCode's plugin cache and adds it to the global
 reproducible installs:
 
 ```sh
-opencode plugin add github:ZaphireLiu/oc-sidebar-token-panel#v0.1.0
+opencode plugin add github:ZaphireLiu/oc-sidebar-token-panel#v0.1.4
 ```
 
 Update with `opencode plugin update`, and remove with
