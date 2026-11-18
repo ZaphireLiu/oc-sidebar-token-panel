@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
-    "jsxImportSource": "@opentui/solid",
+    "jsxImportSource": ".",
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true

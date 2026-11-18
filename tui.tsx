@@ -1,4 +1,4 @@
-/** @jsxImportSource @opentui/solid */
+/** @jsxImportSource . */
 import { Plugin, usePlugin } from "@opencode/plugin/tui"
 import { createMemo } from "solid-js"
 
