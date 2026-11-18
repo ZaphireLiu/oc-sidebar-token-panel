@@ -35,6 +35,25 @@ sessions, so nothing is counted twice.
 
 ## Install
 
+### With the OpenCode plugin manager
+
+```sh
+opencode plugin add github:ZaphireLiu/oc-sidebar-token-panel
+```
+
+This installs the package into OpenCode's plugin cache and adds it to the global
+`opencode.jsonc` plugin list, so it applies to every project. Pin a release for
+reproducible installs:
+
+```sh
+opencode plugin add github:ZaphireLiu/oc-sidebar-token-panel#v0.1.0
+```
+
+Update with `opencode plugin update`, and remove with
+`opencode plugin remove github:ZaphireLiu/oc-sidebar-token-panel`.
+
+### From a local checkout
+
 Clone the repository and add the checkout path to `plugins` in
 `~/.config/opencode/cli.json`:
 
