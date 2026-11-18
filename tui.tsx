@@ -1,6 +1,23 @@
-/** @jsxImportSource . */
+/** @jsx h */
 import { Plugin, usePlugin } from "@opencode/plugin/tui"
+import { createComponent, createElement, spread } from "@opentui/solid"
 import { createMemo } from "solid-js"
+
+// Classic JSX factory for OpenTUI's Solid renderer.
+//
+// OpenCode maps the bare `@opentui/solid` specifier at runtime but not the
+// `@opentui/solid/jsx-runtime` subpath for plugins installed from npm/Git. A
+// classic factory keeps every bare import in this entry module, so the same
+// source works for local-path and package installs without a build step.
+function h(type: any, props: any, ...children: any[]) {
+  const next = { ...(props ?? {}) }
+  if (children.length === 1) next.children = children[0]
+  else if (children.length > 1) next.children = children
+  if (typeof type === "function") return createComponent(type, next)
+  const element = createElement(type)
+  spread(element, next)
+  return element
+}
 
 // Token accounting for the current session tree:
 //   hit  = cache.read                       (prompt cache hits)
