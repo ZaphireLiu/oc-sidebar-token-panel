@@ -3,12 +3,12 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["index.ts", "tui.tsx"]
+  "include": [
+    "index.ts",
+    "tui.ts"
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "oc-sidebar-token-panel",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Minimal OpenCode TUI sidebar panel: cache hit rate, cache-hit tokens, uncached input tokens and output tokens for the current session tree",
   "type": "module",
   "license": "MIT",
@@ -23,6 +23,6 @@
   ],
   "exports": {
     ".": "./index.ts",
-    "./tui": "./tui.tsx"
+    "./tui": "./tui.ts"
   }
 }
