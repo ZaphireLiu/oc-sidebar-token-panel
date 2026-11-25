@@ -10,6 +10,8 @@ Miss      803.3k
 Out       313.2k
 ```
 
+This is a plugin for OpenCode, but it's not built by the OpenCode team and is not affiliated with the OpenCode team in any way.
+
 ## What it shows
 
 - **Header** — cache hit rate: `Hit / (Hit + Miss)`, two decimals
