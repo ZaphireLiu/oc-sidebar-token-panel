@@ -10,6 +10,8 @@ Miss      803.3k
 Out       313.2k
 ```
 
+While there's already other similar plugins but I only needed the token count as a minimal feature so built this anyway :)
+
 This is a plugin for OpenCode, but it's not built by the OpenCode team and is not affiliated with the OpenCode team in any way.
 
 ## What it shows
